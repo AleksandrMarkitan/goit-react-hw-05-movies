@@ -9,6 +9,5 @@ export const fetchMovie = async id => {
   });
   console.log(data);
   const movie = transformMovie(data);
-  console.log(movie);
   return movie;
 };
