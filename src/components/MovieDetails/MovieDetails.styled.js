@@ -14,7 +14,30 @@ export const AdditionalInfoBox = styled.div`
 `;
 
 export const InfoLink = styled(NavLink)`
+  font-size: 20px;
   &.active {
     color: red;
+  }
+`;
+
+export const Li = styled.li`
+  font-size: 20px;
+  padding: 2px;
+`;
+
+export const Button = styled.button`
+  margin-left: 24px;
+  padding: 6px;
+  font-size: 20px;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+
+  order: 1;
+  align-self: stretch;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    background: #29abdd;
   }
 `;

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { LinkNav, NavList } from './Layout.styled.js';
 
@@ -16,7 +17,9 @@ export const Layout = () => {
           </li>
         </NavList>
       </nav>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

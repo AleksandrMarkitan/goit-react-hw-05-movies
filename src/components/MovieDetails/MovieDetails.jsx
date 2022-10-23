@@ -1,9 +1,13 @@
+import PropTypes from 'prop-types';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import {
   InfoBox,
   AdditionalInfoBox,
   InfoLink,
   InfoText,
+  Button,
+  Li,
 } from './MovieDetails.styled.js';
 
 export const MovieDetails = ({ movie }) => {
@@ -13,12 +17,12 @@ export const MovieDetails = ({ movie }) => {
   const currentLocation = location.state.from;
   return (
     <>
-      <button
+      <Button
         type="button"
         onClick={() => navigation(location.state?.from ?? '/')}
       >
         Go back
-      </button>
+      </Button>
       <InfoBox>
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -36,19 +40,25 @@ export const MovieDetails = ({ movie }) => {
       <AdditionalInfoBox>
         <h3>Additional information</h3>
         <ul>
-          <li>
+          <Li>
             <InfoLink to="cast" state={{ from: currentLocation }}>
               Cast
             </InfoLink>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <InfoLink to="reviews" state={{ from: currentLocation }}>
               Reviews
             </InfoLink>
-          </li>
+          </Li>
         </ul>
       </AdditionalInfoBox>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object.isRequired,
 };
