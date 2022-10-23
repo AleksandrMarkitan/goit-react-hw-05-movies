@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FetchCast } from '../utils/fetchCast';
+import { FetchCast } from 'utils/fetchCast';
 import { useParams } from 'react-router-dom';
 
 export const useFetchCast = () => {
