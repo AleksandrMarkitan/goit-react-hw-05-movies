@@ -13,7 +13,10 @@ export const Cast = () => {
             <li key={id}>
               <h2>{name}</h2>
               <h3>Haracter: {character}</h3>
-              <img src={profile_path} alt={name} />
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+                alt={name}
+              />
             </li>
           ))}
         </ul>

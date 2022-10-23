@@ -7,7 +7,6 @@ export const fetchMovie = async id => {
       api_key: '65573c76cf88d807ccbaf09ca79feb15',
     },
   });
-  console.log(data);
   const movie = transformMovie(data);
   return movie;
 };

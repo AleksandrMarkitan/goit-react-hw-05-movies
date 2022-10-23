@@ -1,18 +1,24 @@
-export const Reviews = () => {
-  //   const { cast, isLoading, error } = useFetchCast();
+import { useFetchReviews } from 'hooks/useFetchReviews';
+import { Loader } from 'components/Loader/Loader';
 
+export const Reviews = () => {
+  const { reviews, isLoading, error } = useFetchReviews();
   return (
     <>
-      Rewieeeeeeeewewewewe
-      {/* {isLoading && <Loader />}
+      {isLoading && <Loader />}
       {error && <p>Oops! Something wrong</p>}
-      {cast && (
+      {reviews?.length ? (
         <ul>
-          {cast.map(({ id, title }) => (
-            <li key={id}>{title}</li>
+          {reviews.map(({ id, author, content }) => (
+            <li key={id}>
+              <h2>{author}</h2>
+              <p>{content}</p>
+            </li>
           ))}
         </ul>
-      )} */}
+      ) : (
+        <h3>We don`t have any reviews for this movie</h3>
+      )}
     </>
   );
 };
