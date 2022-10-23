@@ -14,7 +14,7 @@ export const MovieDetails = ({ movie }) => {
   const { poster_path, title, vote_average, overview, genresName } = movie;
   const location = useLocation();
   const navigation = useNavigate();
-  const currentLocation = location.state.from;
+  const currentLocation = location?.state?.from;
   return (
     <>
       <Button
