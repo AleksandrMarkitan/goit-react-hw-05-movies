@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { FetchCast } from 'utils/fetchCast';
+import { FetchCast } from 'utils/fetchCasts';
 
 export const useFetchCast = () => {
   const [cast, setCast] = useState(null);
